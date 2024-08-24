@@ -104,10 +104,10 @@ function render() {
 
         if (todoItem.isCompleted) {
             ul.classList.add("line-through", "text-gray-300", "pointer");
-            editBtn.disabled = true;
+            editBtn.style.display = "none";
         } else {
             ul.classList.remove("line-through", "text-gray-300");
-            editBtn.disabled = false;
+             editBtn.style.display = "block";
         }
 
         ul.addEventListener("click", function () {

@@ -33,22 +33,47 @@ function todoComponent(todoItem) {
     const div = document.createElement("div");
     const ul = document.createElement("ul");
     ul.innerHTML = todoItem.title;
-    div.classList.add("flex", "items-center", "justify-between");
+    div.classList.add("flex", "items-center", "justify-between", "p-2", "bg-slate-600", "rounded-lg", "mt-2", "text-sm", "md:text-base", "lg:text-lg");
     div.append(ul);
 
     const input = document.createElement("input");
     input.style.display = "none";
     input.value = todoItem.title;
-    input.classList.add("w-[17vw]", "rounded-[2vw]", "outline-none", "text-black", "pl-3", "font-semibold");
+    input.classList.add(
+        "w-full",
+        "rounded-lg",
+        "outline-none",
+        "text-black",
+        "p-2",
+        "text-sm",
+        "sm:p-3",
+        "sm:text-base",
+        "md:p-4",
+        "md:text-lg"
+    );
     div.append(input);
 
     const divSec = document.createElement("div");
-    divSec.classList.add("flex", "items-center", "justify-between");
+    divSec.classList.add("flex", "items-center", "space-x-2");
     div.append(divSec);
 
     const editBtn = document.createElement("button");
     editBtn.innerHTML = "Edit";
-    editBtn.classList.add("text-[1vw]", "bg-teal-400", "rounded-[2vw]", "font-mono", "w-[5vw]", "font-bold", "mr-1");
+    editBtn.classList.add(
+        "bg-teal-400",
+        "text-white",
+        "rounded-lg",
+        "px-3",
+        "py-2",
+        "text-sm",
+        "sm:px-4",
+        "sm:py-3",
+        "sm:text-base",
+        "md:px-5",
+        "md:py-3",
+        "lg:text-lg",
+        "hover:bg-teal-500"
+    );
     divSec.append(editBtn);
 
     editBtn.addEventListener("click", () => {
@@ -59,9 +84,23 @@ function todoComponent(todoItem) {
     });
 
     const saveBtn = document.createElement("button");
-    saveBtn.classList.add("text-[1vw]", "bg-teal-400", "rounded-[2vw]", "font-mono", "w-[5vw]", "font-bold", "mr-1");
     saveBtn.innerHTML = "Save";
     saveBtn.style.display = "none";
+    saveBtn.classList.add(
+        "bg-teal-400",
+        "text-white",
+        "rounded-lg",
+        "px-3",
+        "py-2",
+        "text-sm",
+        "sm:px-4",
+        "sm:py-3",
+        "sm:text-base",
+        "md:px-5",
+        "md:py-3",
+        "lg:text-lg",
+        "hover:bg-teal-500"
+    );
     divSec.append(saveBtn);
 
     saveBtn.addEventListener("click", () => {
@@ -77,7 +116,21 @@ function todoComponent(todoItem) {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = "Delete";
-    deleteBtn.classList.add("text-[1vw]", "bg-teal-400", "rounded-[2vw]", "font-mono", "w-[5vw]", "font-bold");
+    deleteBtn.classList.add(
+        "bg-red-500",
+        "text-white",
+        "rounded-lg",
+        "px-3",
+        "py-2",
+        "text-sm",
+        "sm:px-4",
+        "sm:py-3",
+        "sm:text-base",
+        "md:px-5",
+        "md:py-3",
+        "lg:text-lg",
+        "hover:bg-red-600"
+    );
     divSec.append(deleteBtn);
 
     deleteBtn.addEventListener("click", () => {
@@ -91,6 +144,7 @@ function todoComponent(todoItem) {
 
     return div;
 }
+
 
 function render() {
     const todoList = document.querySelector("#todo-item");
